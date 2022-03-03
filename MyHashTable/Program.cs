@@ -1,6 +1,38 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+using System;
+using MyHashTable;
+using MyGenerator;
 
-app.MapGet("/", () => "Hello World!");
+public class Program
+{
+    private static readonly int N = 53;
 
-app.Run();
+    static void Main()
+    {
+        Console.Out.WriteLine("START");
+        var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
+        OutputArr(randomUniqueSet, true, true);
+
+        //var hashTable = MyHashTable.InitTableWithSet(randomUniqueSet);
+
+        /*var hashTable = HashTable.GetHashTable(N);
+        
+        Console.Out.WriteLine($"Lenght: {hashTable.Length}\n");
+        
+        HashTable.OutputTable(hashTable);*/
+
+        Console.Out.WriteLine("STOP");
+    }
+
+    private static void OutputArr(int [] arr, bool hrz = false, bool needIndex = false)
+    {
+        Console.Out.WriteLine("Data:");
+        for (var i = 0; i < arr.Length; i++)
+        {
+            if (hrz)
+                Console.Out.Write(needIndex ? $"{i + 1}-{arr[i]} " : $"{arr[i]}");
+            else
+                Console.Out.WriteLine(needIndex ? $"\t{i + 1} - \t{arr[i]}" : $"\t{arr[i]}");
+        }
+        Console.Out.WriteLine("");
+    }
+}

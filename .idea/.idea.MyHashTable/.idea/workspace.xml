@@ -5,11 +5,21 @@
     <projectFile profileName="IIS Express">MyHashTable/MyHashTable.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="" />
+    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.csproj.AssemblyReference.cache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/HashTable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/GeneratorValues.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25s0EvLmjUujv5Qd86382etaohQ" />
   <component name="ProjectViewState">
@@ -63,13 +73,15 @@
       <option name="presentableId" value="Default" />
       <updated>1646300384948</updated>
       <workItem from="1646300385764" duration="31000" />
+      <workItem from="1646300572728" duration="26000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
