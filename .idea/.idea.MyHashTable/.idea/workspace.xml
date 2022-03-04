@@ -4,9 +4,21 @@
     <projectFile profileName="MyHashTable">MyHashTable/MyHashTable.csproj</projectFile>
     <projectFile profileName="IIS Express">MyHashTable/MyHashTable.csproj</projectFile>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/HashTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/HashTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,12 +26,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="dev" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/HashTable.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../MyHashTable2/MyHashTable/GeneratorValues.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57c2d4282221452cad4df86bbd5d6fa0a1fc70/AB/Int32.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25s0EvLmjUujv5Qd86382etaohQ" />
   <component name="ProjectViewState">
@@ -30,6 +45,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.MyHashTable">
@@ -74,7 +93,18 @@
       <updated>1646300384948</updated>
       <workItem from="1646300385764" duration="31000" />
       <workItem from="1646300572728" duration="26000" />
+      <workItem from="1646300648336" duration="1037000" />
+      <workItem from="1646303143225" duration="1226000" />
+      <workItem from="1646386547038" duration="5155000" />
     </task>
+    <task id="LOCAL-00001" summary="Реализован генератор уникальных значений">
+      <created>1646300858053</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1646300858053</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,7 +113,21 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Реализован генератор уникальных значений" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализован генератор уникальных значений" />
   </component>
 </project>

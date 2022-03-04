@@ -12,13 +12,8 @@ public class Program
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
         OutputArr(randomUniqueSet, true, true);
 
-        //var hashTable = MyHashTable.InitTableWithSet(randomUniqueSet);
-
-        /*var hashTable = HashTable.GetHashTable(N);
-        
-        Console.Out.WriteLine($"Lenght: {hashTable.Length}\n");
-        
-        HashTable.OutputTable(hashTable);*/
+        var hashTable = HashTable.InitTableWithSet(randomUniqueSet);
+        HashTable.OutputHashTable(hashTable);
 
         Console.Out.WriteLine("STOP");
     }

@@ -2,29 +2,32 @@
 
 namespace MyHashTable
 {
-    /*public class HashTable
+    public class HashTable
     {
+        /// <summary>
+        /// Ограничение по количеству попыток разрешить коллизию
+        /// </summary>
+        private static readonly int _numberAttempts = 50;
+        
+        /// <summary>
+        /// Постоянный коэфициент для разрешения коллизий
+        /// </summary>
+        private static readonly int _k = 3;
+        
+        /// <summary>
+        /// Количество занятых ячеек
+        /// </summary>
+        public int M = 0;
+        
         public int? key { set; get; }
         
         public int? value { set; get; }
 
-        public static HashTable[] GetHashTable(int n)
-        {
-            var originalTable = InitHashTable(n);
-            OutputTable(originalTable, false);
-
-            var hashTable = OriginalTableToHashTable(originalTable, n);
-
-            Console.Out.WriteLine("");
-            return hashTable;
-        }
-        
-
-        public static void OutputTable(HashTable[] hashTable, bool vertical = true)
+        public static void OutputHashTable(HashTable[] hashTable, bool vrt = false)
         {
             for (int i = 0; i < hashTable.Length; i++)
             {
-                if (vertical)
+                if (vrt)
                 {
                     Console.Out.WriteLine($"\t{i} > \t{hashTable[i].key} > \t{hashTable[i].value}");
                 }
@@ -35,32 +38,61 @@ namespace MyHashTable
             }
         }
 
-
-
-        public static HashTable[] OriginalTableToHashTable(HashTable[] originalTable, int n)
+        public HashTable[] InitTableWithSet(int[] set)
         {
-            var hashtable = new HashTable[n * 3 / 2];
+            int sizeTable = set.Length * 3 / 2;
+            var hashTable = new HashTable[sizeTable];
 
-            for (int i = 0; i < hashtable.Length; i++)
+            for (int i = 0; i < sizeTable; i++)
             {
-                // if (hashtable[originalTable[i].key].value != 0)
-                // {
-                //     // Коллизия
-                // }
-                //
-                // hashtable[originalTable[i].key].key = i;
-                // hashtable[originalTable[i].key].value = originalTable[i].value;
+                hashTable[i] = new HashTable();
+            }
+
+            foreach (var value in set)
+            {
+                int counterAttempts = 0;
+                bool resolvedCollision = false;
+                do
+                {
+                    int key = GetHash(value) + ResolveCollision(sizeTable, counterAttempts);
+
+                    if (key > sizeTable)
+                        throw new NotImplementedException($"Полученный ключ ({key}) больше размера таблицы ({sizeTable})");
+
+                    Console.Out.WriteLine($">>\tkey - {key}");
+                    
+                    if (hashTable[key].value == null)
+                    {
+                        hashTable[key].key = key;
+                        hashTable[key].value = value;
+                        resolvedCollision = true;
+                        M++;
+                    }
+                    
+                    if (counterAttempts > _numberAttempts)
+                        throw new Exception($"Неудалось разрешить коллизии за {_numberAttempts} шагов");
+
+                    counterAttempts++;
+
+                } while (resolvedCollision);
+
 
             }
             
-            return hashtable;
+            return hashTable;
         }
 
 
-        public static void ResolveCollision()
+        public static int GetHash(int value)
         {
-            throw new NotImplementedException();
+            return value / 1000 + value % 10;
+            
+        }
+
+        private static int ResolveCollision(int sizeTable, int index = 0)
+        {
+            return index * index * _k % sizeTable;
         }
         
-    }*/
+    }
 }
