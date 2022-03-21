@@ -5,6 +5,11 @@ namespace MyHashTable
     public class HashTable
     {
         /// <summary>
+        /// Максимальный размер таблицы
+        /// </summary>
+        private static readonly int _maxSize = 255;
+        
+        /// <summary>
         /// Ограничение по количеству попыток разрешить коллизию
         /// </summary>
         private static readonly int _numberAttempts = 50;
@@ -17,82 +22,149 @@ namespace MyHashTable
         /// <summary>
         /// Количество занятых ячеек
         /// </summary>
-        public int M = 0;
-        
-        public int? key { set; get; }
-        
-        public int? value { set; get; }
+        private int _m = 0;
 
-        public static void OutputHashTable(HashTable[] hashTable, bool vrt = false)
+        /// <summary>
+        /// Размер исходной таблицы со сзначениями
+        /// </summary>
+        private int _sizeTable = 0;
+        
+        /// <summary>
+        /// Размер полученной хеш-таблицы
+        /// </summary>
+        private int _sizeHashTable = 0;
+
+        /// <summary>
+        /// Сумма шаго потребовавшихся для определения ключа
+        /// </summary>
+        private int _counterAttempts = 0;
+
+        /// <summary>
+        /// Список элементов
+        /// </summary>
+        private Item[] _items;
+
+        /// <summary>
+        /// Метод вывода хеш таблицы на экран
+        /// </summary>
+        public void OutputHashTable(bool vrt = false)
         {
-            for (int i = 0; i < hashTable.Length; i++)
+            for (int i = 0; i < _items.Length; i++)
             {
                 if (vrt)
                 {
-                    Console.Out.WriteLine($"\t{i} > \t{hashTable[i].key} > \t{hashTable[i].value}");
+                    Console.Out.WriteLine($"\t{i} > \t{_items[i].Key} > \t{_items[i].Value}");
                 }
                 else
                 {
-                    Console.Out.Write($"{i}-{hashTable[i].value} ");
+                    Console.Out.Write($"{i}-{_items[i].Value} ");
                 }
             }
         }
 
-        public HashTable[] InitTableWithSet(int[] set)
+        /// <summary>
+        /// Инициализация хеш таблицы значениями из заданного набора
+        /// </summary>
+        public void InitTableWithSet(int[] set)
         {
-            int sizeTable = set.Length * 3 / 2;
-            var hashTable = new HashTable[sizeTable];
+            _sizeTable = set.Length;
+            _sizeHashTable = _sizeTable * 3 / 2;
+            var items = new Item[_sizeHashTable];
 
-            for (int i = 0; i < sizeTable; i++)
+            for (var i = 0; i < _sizeHashTable; i++)
             {
-                hashTable[i] = new HashTable();
+                items[i] = new Item();
             }
-
-            foreach (var value in set)
+            
+            for (var i = 0; i < set.Length; i++)
             {
                 int counterAttempts = 0;
                 bool resolvedCollision = false;
                 do
                 {
-                    int key = GetHash(value) + ResolveCollision(sizeTable, counterAttempts);
+                    int key = (GetHash(set[i]) + counterAttempts * counterAttempts) % _sizeHashTable;
 
-                    if (key > sizeTable)
-                        throw new NotImplementedException($"Полученный ключ ({key}) больше размера таблицы ({sizeTable})");
+                    if (key > _sizeHashTable)
+                        throw new NotImplementedException($"ERR>>\tПолученный ключ ({key}) больше размера таблицы ({_sizeHashTable})");
 
-                    Console.Out.WriteLine($">>\tkey - {key}");
-                    
-                    if (hashTable[key].value == null)
+                    if (items[key].Value == null)
                     {
-                        hashTable[key].key = key;
-                        hashTable[key].value = value;
+                        items[key].Key = i;
+                        items[key].Value = set[i];
                         resolvedCollision = true;
-                        M++;
+                        _m++;
+                        _counterAttempts += counterAttempts;
+                        //Console.Out.WriteLine($"LOG>>\tДля значения {set[i]} за {counterAttempts} шагов найден ключ: Key = {key}");
                     }
                     
                     if (counterAttempts > _numberAttempts)
-                        throw new Exception($"Неудалось разрешить коллизии за {_numberAttempts} шагов");
+                        throw new Exception($"ERR>>\tНеудалось разрешить коллизию (методом квадратичного пробирования) за {_numberAttempts} шагов");
 
                     counterAttempts++;
 
-                } while (resolvedCollision);
-
-
+                } while (!resolvedCollision);
             }
-            
-            return hashTable;
+            _items = items;
         }
 
-
+        /// <summary>
+        /// Хеш функция
+        /// </summary>
         public static int GetHash(int value)
         {
             return value / 1000 + value % 10;
             
         }
 
-        private static int ResolveCollision(int sizeTable, int index = 0)
+        /// <summary>
+        /// Пересчитать количество занятых ячеек
+        /// </summary>
+        private void UpdateOccupiedCell()
         {
-            return index * index * _k % sizeTable;
+            int counter = 0;
+            foreach (var item in _items)
+            {
+                if (item.Value == null)
+                    counter++;
+            }
+            _m = counter;
         }
-        
+
+        /// <summary>
+        /// Получение коэффициента заполнения
+        /// </summary>
+        /// <returns></returns>
+        public double GetFilling()
+        {
+            UpdateOccupiedCell();
+            return _sizeHashTable == 0 ? 0 : (double)_m / (double)_sizeHashTable;
+        }
+
+        /// <summary>
+        /// Получение среднего числа шагов потребовавшихся для поиска ключа
+        /// </summary>
+        public double GetAverageNumberSteps()
+        {
+            return _sizeHashTable == 0 ? 0 : (double)_counterAttempts / (double)_sizeTable;
+        }
+
+        /// <summary>
+        /// Базовый класс для элементов
+        /// </summary>
+        private class Item
+        {
+            public int? Key { get; internal set; }
+            public int? Value { get; internal set; }
+
+            public Item()
+            {
+            }
+
+            public Item(int key, int value)
+            {
+                Key = key;
+                Value = value;
+            }
+        }
     }
 }

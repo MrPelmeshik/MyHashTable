@@ -11,10 +11,21 @@ public class Program
         Console.Out.WriteLine("START");
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
         OutputArr(randomUniqueSet, true, true);
-
-        var hashTable = HashTable.InitTableWithSet(randomUniqueSet);
-        HashTable.OutputHashTable(hashTable);
-
+        
+        try
+        {
+            var hashTable = new HashTable();
+            hashTable.InitTableWithSet(randomUniqueSet);
+            hashTable.OutputHashTable(true);
+            Console.Out.WriteLine($"Коэффициент заполнения: {hashTable.GetFilling()}");
+            Console.Out.WriteLine($"Среднее число шагов: {hashTable.GetAverageNumberSteps()}");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
+        
         Console.Out.WriteLine("STOP");
     }
 

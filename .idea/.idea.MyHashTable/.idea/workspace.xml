@@ -95,7 +95,11 @@
       <workItem from="1646300572728" duration="26000" />
       <workItem from="1646300648336" duration="1037000" />
       <workItem from="1646303143225" duration="1226000" />
-      <workItem from="1646386547038" duration="5155000" />
+      <workItem from="1646386547038" duration="6246000" />
+      <workItem from="1647411058271" duration="337000" />
+      <workItem from="1647777692868" duration="360000" />
+      <workItem from="1647869197580" duration="1240000" />
+      <workItem from="1647879318038" duration="10297000" />
     </task>
     <task id="LOCAL-00001" summary="Реализован генератор уникальных значений">
       <created>1646300858053</created>
@@ -104,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646300858053</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Реализовал хеш таблицу. Отсутствует перескак в случае перебора по ключу">
+      <created>1646391804692</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1646391804692</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +139,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Реализован генератор уникальных значений" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализован генератор уникальных значений" />
+    <MESSAGE value="Реализовал хеш таблицу. Отсутствует перескак в случае перебора по ключу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализовал хеш таблицу. Отсутствует перескак в случае перебора по ключу" />
   </component>
 </project>
