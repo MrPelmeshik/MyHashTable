@@ -8,7 +8,7 @@ public class Program
 
     static void Main()
     {
-        Console.Out.WriteLine("START");
+        Console.Out.WriteLine("\nSTART");
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
         OutputArr(randomUniqueSet, true, true);
         
@@ -16,7 +16,7 @@ public class Program
         {
             var hashTable = new HashTable();
             hashTable.InitTableWithSet(randomUniqueSet);
-            hashTable.OutputHashTable(true);
+            hashTable.OutputHashTable();
             Console.Out.WriteLine($"Коэффициент заполнения: {hashTable.GetFilling()}");
             Console.Out.WriteLine($"Среднее число шагов: {hashTable.GetAverageNumberSteps()}");
         }
@@ -26,18 +26,18 @@ public class Program
             throw;
         }
         
-        Console.Out.WriteLine("STOP");
+        Console.Out.WriteLine("\nSTOP");
     }
 
     private static void OutputArr(int [] arr, bool hrz = false, bool needIndex = false)
     {
-        Console.Out.WriteLine("Data:");
+        Console.Out.WriteLine("\nData:");
         for (var i = 0; i < arr.Length; i++)
         {
             if (hrz)
-                Console.Out.Write(needIndex ? $"{i + 1}-{arr[i]} " : $"{arr[i]}");
+                Console.Out.Write(needIndex ? $"{i}-{arr[i]} " : $"{arr[i]}");
             else
-                Console.Out.WriteLine(needIndex ? $"\t{i + 1} - \t{arr[i]}" : $"\t{arr[i]}");
+                Console.Out.WriteLine(needIndex ? $"\t{i} - \t{arr[i]}" : $"\t{arr[i]}");
         }
         Console.Out.WriteLine("");
     }

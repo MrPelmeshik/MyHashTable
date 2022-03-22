@@ -47,18 +47,24 @@ namespace MyHashTable
         /// <summary>
         /// Метод вывода хеш таблицы на экран
         /// </summary>
-        public void OutputHashTable(bool vrt = false)
+        public void OutputHashTable(int numColumn = 1)
         {
-            for (int i = 0; i < _items.Length; i++)
+            Console.Out.WriteLine("\nHashTable:");
+            int n = _items.Length / 3;
+            for (int i = 0; i < n + 1; i++)
             {
-                if (vrt)
-                {
-                    Console.Out.WriteLine($"\t{i} > \t{_items[i].Key} > \t{_items[i].Value}");
-                }
-                else
-                {
-                    Console.Out.Write($"{i}-{_items[i].Value} ");
-                }
+                Console.Out.Write(i < _items.Length
+                    ? $"\t{i} > \t[{_items[i].Key}]\t[{_items[i].Value}]" 
+                    : $"\t\t\t");
+                var k = n + 1;
+                Console.Out.Write(k + i < _items.Length
+                    ? $"\t\t{k + i} > \t[{_items[k + i].Key}]\t[{_items[k + i].Value}]"
+                    : $"\t\t\t");
+                k = n + n + 2;
+                Console.Out.Write(k + i  < _items.Length
+                    ? $"\t\t{k + i} > \t[{_items[k + i].Key}]\t[{_items[k + i].Value}]"
+                    : $"\t\t\t");
+                Console.Out.Write("\n");
             }
         }
 
@@ -93,7 +99,7 @@ namespace MyHashTable
                         items[key].Value = set[i];
                         resolvedCollision = true;
                         _m++;
-                        _counterAttempts += counterAttempts;
+                        _counterAttempts += counterAttempts + 1;
                         //Console.Out.WriteLine($"LOG>>\tДля значения {set[i]} за {counterAttempts} шагов найден ключ: Key = {key}");
                     }
                     
