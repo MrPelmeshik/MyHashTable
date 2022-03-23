@@ -8,14 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" afterDir="false" />
+    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="~ Корректировки">
+      <change beforePath="$PROJECT_DIR$/MyHashTable/HashTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/HashTable.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +19,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="lr1" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,7 +95,7 @@
       <workItem from="1647967373318" duration="8102000" />
       <workItem from="1648013942711" duration="3161000" />
       <workItem from="1648024631476" duration="1033000" />
-      <workItem from="1648033454251" duration="666000" />
+      <workItem from="1648033454251" duration="899000" />
     </task>
     <task id="LOCAL-00001" summary="Реализован генератор уникальных значений">
       <created>1646300858053</created>
@@ -131,7 +125,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648021666680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="~ Корректировки">
+      <created>1648034578221</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648034578222</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -149,6 +149,24 @@ namespace MyHashTable
         }
 
         /// <summary>
+        /// Поиск индекса элемента по значению 
+        /// </summary>
+        public int Find()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Add()
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Dlt()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// Базовый класс для элементов
         /// </summary>
         private class Item
