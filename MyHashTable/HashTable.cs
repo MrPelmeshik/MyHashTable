@@ -7,18 +7,13 @@ namespace MyHashTable
         /// <summary>
         /// Максимальный размер таблицы
         /// </summary>
-        private static readonly int _maxSize = 255;
+        //private static readonly int _maxSize = 255;
         
         /// <summary>
         /// Ограничение по количеству попыток разрешить коллизию
         /// </summary>
         private static readonly int _numberAttempts = 50;
-        
-        /// <summary>
-        /// Постоянный коэфициент для разрешения коллизий
-        /// </summary>
-        private static readonly int _k = 3;
-        
+
         /// <summary>
         /// Количество занятых ячеек
         /// </summary>
@@ -35,7 +30,7 @@ namespace MyHashTable
         private int _sizeHashTable = 0;
 
         /// <summary>
-        /// Сумма шаго потребовавшихся для определения ключа
+        /// Сумма шагов, потребовавшихся для определения ключа
         /// </summary>
         private int _counterAttempts = 0;
 
@@ -45,7 +40,7 @@ namespace MyHashTable
         private Item[] _items;
 
         /// <summary>
-        /// Метод вывода хеш таблицы на экран
+        /// Метод вывода хеш-таблицы на экран
         /// </summary>
         public void OutputHashTable(int numColumn = 1)
         {
@@ -139,7 +134,6 @@ namespace MyHashTable
         /// <summary>
         /// Получение коэффициента заполнения
         /// </summary>
-        /// <returns></returns>
         public double GetFilling()
         {
             UpdateOccupiedCell();
@@ -147,11 +141,11 @@ namespace MyHashTable
         }
 
         /// <summary>
-        /// Получение среднего числа шагов потребовавшихся для поиска ключа
+        /// Получение среднего числа шагов, потребовавшихся для поиска ключа
         /// </summary>
         public double GetAverageNumberSteps()
         {
-            return _sizeHashTable == 0 ? 0 : (double)_counterAttempts / (double)_sizeTable;
+            return _sizeTable == 0 ? 0 : (double)_counterAttempts / (double)_sizeTable;
         }
 
         /// <summary>
