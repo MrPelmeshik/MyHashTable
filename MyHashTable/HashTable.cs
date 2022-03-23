@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace MyHashTable
 {
@@ -42,7 +43,7 @@ namespace MyHashTable
         /// <summary>
         /// Метод вывода хеш-таблицы на экран
         /// </summary>
-        public void OutputHashTable(int numColumn = 1)
+        public void OutputHashTable()
         {
             Console.Out.WriteLine("\nHashTable:");
             int n = _items.Length / 3;
@@ -64,48 +65,36 @@ namespace MyHashTable
         }
 
         /// <summary>
+        /// Метод вывода информации информации о ХТ
+        /// </summary>
+        public void OutputInfo()
+        {
+            Console.Out.WriteLine($"Коэффициент заполнения: {GetFilling()}");
+            Console.Out.WriteLine($"Среднее число шагов: {GetAverageNumberSteps()}");
+        }
+
+        /// <summary>
         /// Инициализация хеш таблицы значениями из заданного набора
         /// </summary>
         public void InitTableWithSet(int[] set)
         {
             _sizeTable = set.Length;
             _sizeHashTable = _sizeTable * 3 / 2;
-            var items = new Item[_sizeHashTable];
+            _items = new Item[_sizeHashTable];
 
             for (var i = 0; i < _sizeHashTable; i++)
             {
-                items[i] = new Item();
+                _items[i] = new Item();
             }
             
             for (var i = 0; i < set.Length; i++)
             {
-                int counterAttempts = 0;
-                bool resolvedCollision = false;
-                do
+                if (!Add(set[i], i))
                 {
-                    int key = (GetHash(set[i]) + counterAttempts * counterAttempts) % _sizeHashTable;
-
-                    if (key > _sizeHashTable)
-                        throw new NotImplementedException($"ERR>>\tПолученный ключ ({key}) больше размера таблицы ({_sizeHashTable})");
-
-                    if (items[key].Value == null)
-                    {
-                        items[key].Key = i;
-                        items[key].Value = set[i];
-                        resolvedCollision = true;
-                        _m++;
-                        _counterAttempts += counterAttempts + 1;
-                        //Console.Out.WriteLine($"LOG>>\tДля значения {set[i]} за {counterAttempts} шагов найден ключ: Key = {key}");
-                    }
-                    
-                    if (counterAttempts > _numberAttempts)
-                        throw new Exception($"ERR>>\tНеудалось разрешить коллизию (методом квадратичного пробирования) за {_numberAttempts} шагов");
-
-                    counterAttempts++;
-
-                } while (!resolvedCollision);
+                    Console.Out.WriteLine($"ERR\tОшибка инициализации хеш-таблицы набором данных");
+                    return;
+                }
             }
-            _items = items;
         }
 
         /// <summary>
@@ -125,7 +114,7 @@ namespace MyHashTable
             int counter = 0;
             foreach (var item in _items)
             {
-                if (item.Value == null)
+                if (item.Value != null)
                     counter++;
             }
             _m = counter;
@@ -151,38 +140,101 @@ namespace MyHashTable
         /// <summary>
         /// Поиск индекса элемента по значению 
         /// </summary>
-        public int Find()
+        public bool Find(int targetValue, out int? key)
         {
-            throw new NotImplementedException();
+            key = null;
+            var counterAttempts = 0; // Счетчик шагов
+            var isFound = false;
+            int hTargetValue = 0; 
+            do
+            {
+                hTargetValue = (GetHash(targetValue) + counterAttempts * counterAttempts) % _sizeHashTable;
+                counterAttempts++;
+
+                if (_items[hTargetValue].Value == targetValue)
+                {
+                    isFound = true;
+                    Console.Out.WriteLine($"RES>>\tВведенное значение ({targetValue}) найдено за {counterAttempts} шагов по ключу {hTargetValue}");
+                    key = hTargetValue;
+                    return true;
+                }
+
+            } while (_items[hTargetValue].isCollision);
+
+            Console.Out.WriteLine($"RES>>\tВведенное значение ({targetValue}) не найдено");
+            return false;
         }
 
-        public bool Add()
+        /// <summary>
+        /// Добавить элемент
+        /// </summary>
+        public bool Add(int addValue, int? index = null)
         {
-            throw new NotImplementedException();
+            int counterAttempts = 0;
+            bool resolvedCollision = false;
+            do
+            {
+                int key = (GetHash(addValue) + counterAttempts * counterAttempts) % _sizeHashTable;
+
+                if (_items[key].Value == null)
+                {
+                    _items[key].Key = index;
+                    _items[key].Value = addValue;
+                    _items[key].isCollision = true;
+                    resolvedCollision = true;
+                    _m++;
+                    _counterAttempts += counterAttempts + 1;
+                    Console.Out.WriteLine($"RES>>\tЗначение {addValue} добавлено за {counterAttempts} шагов по ключу {key}");
+                    return true;
+                }
+
+                counterAttempts++;
+
+            } while (counterAttempts < _numberAttempts && !resolvedCollision);
+
+            Console.Out.WriteLine(
+                $"RES>>\tНеудалось добавить занчение {addValue} (неудалось разрешить коллизию методом квадратичного пробирования за {_numberAttempts} шагов)");
+            return false;
         }
 
-        public bool Dlt()
+        /// <summary>
+        /// Удалить элемент по значению
+        /// </summary>
+        public bool Dlt(int dltValue)
         {
-            throw new NotImplementedException();
+            if (Find(dltValue, out int? keyDltValue))
+            {
+                _items[(int) keyDltValue].Key = null;
+                _items[(int) keyDltValue].Value = null;
+                _m--;
+                Console.Out.WriteLine($"RES>>\tВведенное значение ({dltValue}) удалено по ключу {keyDltValue}");
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
         /// Базовый класс для элементов
         /// </summary>
-        private class Item
+        internal class Item
         {
             public int? Key { get; internal set; }
             public int? Value { get; internal set; }
+            
+            public bool isCollision { get; internal set; }
 
             public Item()
             {
+                Key = null;
+                Value = null;
+                isCollision = false;
             }
 
-            public Item(int key, int value)
+            /*public Item(int key, int value)
             {
                 Key = key;
                 Value = value;
-            }
+            }*/
         }
     }
 }
