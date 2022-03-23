@@ -9,7 +9,7 @@ namespace MyHashTable
         /// Максимальный размер таблицы
         /// </summary>
         //private static readonly int _maxSize = 255;
-        
+
         /// <summary>
         /// Ограничение по количеству попыток разрешить коллизию
         /// </summary>
@@ -24,7 +24,7 @@ namespace MyHashTable
         /// Размер исходной таблицы со сзначениями
         /// </summary>
         private int _sizeTable = 0;
-        
+
         /// <summary>
         /// Размер полученной хеш-таблицы
         /// </summary>
@@ -49,18 +49,21 @@ namespace MyHashTable
             int n = _items.Length / 3;
             for (int i = 0; i < n + 1; i++)
             {
-                Console.Out.Write(i < _items.Length
-                    ? $"\t{i} > \t[{_items[i].Key}]\t[{_items[i].Value}]" 
-                    : $"\t\t\t");
-                var k = n + 1;
-                Console.Out.Write(k + i < _items.Length
-                    ? $"\t\t{k + i} > \t[{_items[k + i].Key}]\t[{_items[k + i].Value}]"
-                    : $"\t\t\t");
-                k = n + n + 2;
-                Console.Out.Write(k + i  < _items.Length
-                    ? $"\t\t{k + i} > \t[{_items[k + i].Key}]\t[{_items[k + i].Value}]"
-                    : $"\t\t\t");
+                OutputColumn(i);
+                OutputColumn(n + 1 + i);
+                OutputColumn(n + n + 2 + i);
+
                 Console.Out.Write("\n");
+            }
+
+            void OutputColumn(int i)
+            {
+                Console.Out.Write(
+                    i < _items.Length
+                        ? _items[i].Value != null
+                            ? $"\t{i} > \t{_items[i].Value} ({_items[i].Key})"
+                            : $"\t{i} > \t\t"
+                        : $"\t\t\t");
             }
         }
 
@@ -69,6 +72,7 @@ namespace MyHashTable
         /// </summary>
         public void OutputInfo()
         {
+            Console.Out.WriteLine();
             Console.Out.WriteLine($"Коэффициент заполнения: {GetFilling()}");
             Console.Out.WriteLine($"Среднее число шагов: {GetAverageNumberSteps()}");
         }
@@ -86,7 +90,7 @@ namespace MyHashTable
             {
                 _items[i] = new Item();
             }
-            
+
             for (var i = 0; i < set.Length; i++)
             {
                 if (!Add(set[i], i))
@@ -103,7 +107,7 @@ namespace MyHashTable
         public static int GetHash(int value)
         {
             return value / 1000 + value % 10;
-            
+
         }
 
         /// <summary>
@@ -117,6 +121,7 @@ namespace MyHashTable
                 if (item.Value != null)
                     counter++;
             }
+
             _m = counter;
         }
 
@@ -126,7 +131,7 @@ namespace MyHashTable
         public double GetFilling()
         {
             UpdateOccupiedCell();
-            return _sizeHashTable == 0 ? 0 : (double)_m / (double)_sizeHashTable;
+            return _sizeHashTable == 0 ? 0 : (double) _m / (double) _sizeHashTable;
         }
 
         /// <summary>
@@ -134,7 +139,7 @@ namespace MyHashTable
         /// </summary>
         public double GetAverageNumberSteps()
         {
-            return _sizeTable == 0 ? 0 : (double)_counterAttempts / (double)_sizeTable;
+            return _sizeTable == 0 ? 0 : (double) _counterAttempts / (double) _sizeTable;
         }
 
         /// <summary>
@@ -145,7 +150,7 @@ namespace MyHashTable
             key = null;
             var counterAttempts = 0; // Счетчик шагов
             var isFound = false;
-            int hTargetValue = 0; 
+            int hTargetValue = 0;
             do
             {
                 hTargetValue = (GetHash(targetValue) + counterAttempts * counterAttempts) % _sizeHashTable;
@@ -154,7 +159,8 @@ namespace MyHashTable
                 if (_items[hTargetValue].Value == targetValue)
                 {
                     isFound = true;
-                    Console.Out.WriteLine($"RES>>\tВведенное значение ({targetValue}) найдено за {counterAttempts} шагов по ключу {hTargetValue}");
+                    Console.Out.WriteLine(
+                        $"RES>>\tВведенное значение ({targetValue}) найдено за {counterAttempts} шагов по ключу {hTargetValue}");
                     key = hTargetValue;
                     return true;
                 }
@@ -184,7 +190,8 @@ namespace MyHashTable
                     resolvedCollision = true;
                     _m++;
                     _counterAttempts += counterAttempts + 1;
-                    Console.Out.WriteLine($"RES>>\tЗначение {addValue} добавлено за {counterAttempts} шагов по ключу {key}");
+                    Console.Out.WriteLine(
+                        $"RES>>\tЗначение {addValue} добавлено за {counterAttempts} шагов по ключу {key}");
                     return true;
                 }
 
@@ -210,6 +217,7 @@ namespace MyHashTable
                 Console.Out.WriteLine($"RES>>\tВведенное значение ({dltValue}) удалено по ключу {keyDltValue}");
                 return true;
             }
+
             return false;
         }
 
@@ -220,7 +228,7 @@ namespace MyHashTable
         {
             public int? Key { get; internal set; }
             public int? Value { get; internal set; }
-            
+
             public bool isCollision { get; internal set; }
 
             public Item()

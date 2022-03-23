@@ -13,12 +13,16 @@ public class Program
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
         var hashTable = new HashTable();
         hashTable.InitTableWithSet(randomUniqueSet);
+        
+        OutputArr(randomUniqueSet, true, true);
+        hashTable.OutputHashTable();
+        hashTable.OutputInfo();
 
         bool exit = false;
         do
         {
-            Console.Clear();
-            Console.Out.Write("Меню\n" +
+            //.Clear();
+            Console.Out.Write("\n\nМеню\n" +
                               "1. Показать сгенерированный набор данных\n" +
                               "2. Показать хеш таблицу\n" +
                               "3. Показать данные по хеш таблице\n" +
@@ -74,7 +78,7 @@ public class Program
                     exit = true;
                     break;
             }
-            _ = Console.ReadKey();
+            Console.ReadLine();
         }while (!exit);
 
         /*Console.Out.WriteLine("\n\nЦнициализация хеш-таблицы сгенерированным набором:");

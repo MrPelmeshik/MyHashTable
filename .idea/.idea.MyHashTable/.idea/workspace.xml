@@ -8,16 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="Начальная инициализация">
+    <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/HashTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/HashTable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57c2d4282221452cad4df86bbd5d6fa0a1fc70/AB/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Document/УГАТУ/Магистратура/Алгоритмы и структуры данных/2 семестр/ЛР/MyHashTable/MyHashTable/HashTable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25s0EvLmjUujv5Qd86382etaohQ" />
   <component name="ProjectViewState">
@@ -51,6 +48,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34994584" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -114,6 +113,7 @@
       <workItem from="1648013942711" duration="3161000" />
       <workItem from="1648024631476" duration="1033000" />
       <workItem from="1648033454251" duration="666000" />
+      <workItem from="1648061500367" duration="2818000" />
     </task>
     <task id="LOCAL-00001" summary="Реализован генератор уникальных значений">
       <created>1646300858053</created>
@@ -143,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648021666680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="+ Меню&#10;+ Добавление&#10;+ Удаление&#10;+ Поиск&#10;+ Замена">
+      <created>1648044166507</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1648044166507</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +177,7 @@
     <MESSAGE value="Реализовал хеш таблицу. Отсутствует перескак в случае перебора по ключу" />
     <MESSAGE value="Корректировка вывода на жкран" />
     <MESSAGE value="~ Корректировки" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ Корректировки" />
+    <MESSAGE value="+ Меню&#10;+ Добавление&#10;+ Удаление&#10;+ Поиск&#10;+ Замена" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ Меню&#10;+ Добавление&#10;+ Удаление&#10;+ Поиск&#10;+ Замена" />
   </component>
 </project>
