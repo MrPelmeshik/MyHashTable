@@ -9,23 +9,16 @@ public class Program
     static void Main()
     {
         Console.Out.WriteLine("\nSTART");
+        
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
         OutputArr(randomUniqueSet, true, true);
         
-        try
-        {
-            var hashTable = new HashTable();
-            hashTable.InitTableWithSet(randomUniqueSet);
-            hashTable.OutputHashTable();
-            Console.Out.WriteLine($"Коэффициент заполнения: {hashTable.GetFilling()}");
-            Console.Out.WriteLine($"Среднее число шагов: {hashTable.GetAverageNumberSteps()}");
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
-        
+        var hashTable = new HashTable();
+        hashTable.InitTableWithSet(randomUniqueSet);
+        hashTable.OutputHashTable();
+        Console.Out.WriteLine($"Коэффициент заполнения: {hashTable.GetFilling()}");
+        Console.Out.WriteLine($"Среднее число шагов: {hashTable.GetAverageNumberSteps()}");
+
         Console.Out.WriteLine("\nSTOP");
     }
 
