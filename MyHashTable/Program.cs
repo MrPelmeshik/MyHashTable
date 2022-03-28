@@ -11,13 +11,17 @@ public class Program
         Console.Out.WriteLine("\nSTART");
 
         var randomUniqueSet = GeneratorValues.GetUniqueRandomValues(N, 1000, 9999);
-        var hashTable = new HashTable();
-        hashTable.InitTableWithSet(randomUniqueSet);
+        var hashTable = new HashTable(N);
+        foreach (var randomValue in randomUniqueSet)
+        {
+            hashTable.Add(randomValue, randomValue.ToString());
+        }
         
         OutputArr(randomUniqueSet, true, true);
         hashTable.OutputHashTable();
         hashTable.OutputInfo();
 
+        #region MENU
         bool exit = false;
         do
         {
@@ -62,7 +66,7 @@ public class Program
                     Console.Out.Write("Введите значение для добавления: ");
                     int valueToAdd;
                     int.TryParse(Console.ReadLine(), out valueToAdd);
-                    hashTable.Add(valueToAdd);
+                    hashTable.Add(valueToAdd, valueToAdd.ToString());
                     break;
                 case "7":
                     Console.Out.Write("Введите старое значение: ");
@@ -72,7 +76,7 @@ public class Program
                     int valueToAdd2;
                     int.TryParse(Console.ReadLine(), out valueToAdd);
                     if(hashTable.Dlt(valueToDelete))
-                        hashTable.Add(valueToAdd);
+                        hashTable.Add(valueToAdd, valueToAdd.ToString());
                     break;
                 case "0":
                     exit = true;
@@ -80,41 +84,11 @@ public class Program
             }
             Console.ReadLine();
         }while (!exit);
-
-        /*Console.Out.WriteLine("\n\nЦнициализация хеш-таблицы сгенерированным набором:");
-        var hashTable = new HashTable();
-        hashTable.InitTableWithSet(randomUniqueSet);
-        hashTable.OutputHashTable();
-        hashTable.OutputInfo();
-        
-        Console.Out.WriteLine("\n\nПроверка поиска:");
-        int? key;
-        hashTable.Find(randomUniqueSet[0], out key);
-        hashTable.Find(randomUniqueSet[N / 2], out key);
-        hashTable.Find(randomUniqueSet[N/3], out key);
-        hashTable.Find(randomUniqueSet[N/5], out key);
-        hashTable.Find(randomUniqueSet[N-N/3], out key);
-        hashTable.Find(randomUniqueSet[N-N/5], out key);
-
-        Console.Out.WriteLine("\n\nПроверка удаление:");
-        hashTable.Dlt(randomUniqueSet[0]);
-        hashTable.OutputHashTable();
-        hashTable.OutputInfo();
-        hashTable.Find(randomUniqueSet[0], out key);
-        
-        Console.Out.WriteLine("\n\nПроверка добавления:");
-        hashTable.Add(randomUniqueSet[0]);
-        hashTable.Add(2000);
-        hashTable.OutputHashTable();
-        hashTable.OutputInfo();*/
+        #endregion
 
         Console.Out.WriteLine("\nSTOP");
     }
-
-    public void Menu()
-    {
-        
-    }
+    
     private static void OutputArr(int[] arr, bool hrz = false, bool needIndex = false)
     {
         Console.Out.WriteLine("\nData:");

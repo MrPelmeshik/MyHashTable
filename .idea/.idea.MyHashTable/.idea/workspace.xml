@@ -10,10 +10,14 @@
   <component name="ChangeListManager">
     <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/HashTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/HashTable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/obj/staticwebassets.pack.sentinel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +43,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57c2d4282221452cad4df86bbd5d6fa0a1fc70/AB/Int32.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/Document/УГАТУ/Магистратура/Алгоритмы и структуры данных/2 семестр/ЛР/MyHashTable/MyHashTable/HashTable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25s0EvLmjUujv5Qd86382etaohQ" />
   <component name="ProjectViewState">
@@ -185,5 +190,24 @@
     <MESSAGE value="+ Меню&#10;+ Добавление&#10;+ Удаление&#10;+ Поиск&#10;+ Замена" />
     <MESSAGE value="~ Корректировки" />
     <option name="LAST_COMMIT_MESSAGE" value="~ Корректировки" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/MyHashTable/HashTable.cs</url>
+          <line>142</line>
+          <properties documentPath="E:\Document\УГАТУ\Магистратура\Алгоритмы и структуры данных\2 семестр\ЛР\MyHashTable\MyHashTable\HashTable.cs" initialLine="141" containingFunctionPresentation="method 'OutputInfo'">
+            <startOffsets>
+              <option value="3890" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3891" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
