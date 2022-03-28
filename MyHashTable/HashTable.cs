@@ -18,7 +18,7 @@ namespace MyHashTable
         /// <summary>
         /// Количество занятых ячеек
         /// </summary>
-        private int _m = 0;
+        private int _counterOccupiedCell = 0;
 
         /// <summary>
         /// Размер исходной таблицы со сзначениями
@@ -122,7 +122,7 @@ namespace MyHashTable
                     counter++;
             }
 
-            _m = counter;
+            _counterOccupiedCell = counter;
         }
 
         /// <summary>
@@ -131,7 +131,7 @@ namespace MyHashTable
         public double GetFilling()
         {
             UpdateOccupiedCell();
-            return _sizeHashTable == 0 ? 0 : (double) _m / (double) _sizeHashTable;
+            return _sizeHashTable == 0 ? 0 : (double) _counterOccupiedCell / (double) _sizeHashTable;
         }
 
         /// <summary>
@@ -188,7 +188,7 @@ namespace MyHashTable
                     _items[key].Value = addValue;
                     _items[key].isCollision = true;
                     resolvedCollision = true;
-                    _m++;
+                    _counterOccupiedCell++;
                     _counterAttempts += counterAttempts + 1;
                     Console.Out.WriteLine(
                         $"RES>>\tЗначение {addValue} добавлено за {counterAttempts} шагов по ключу {key}");
@@ -213,7 +213,7 @@ namespace MyHashTable
             {
                 _items[(int) keyDltValue].Key = null;
                 _items[(int) keyDltValue].Value = null;
-                _m--;
+                _counterOccupiedCell--;
                 Console.Out.WriteLine($"RES>>\tВведенное значение ({dltValue}) удалено по ключу {keyDltValue}");
                 return true;
             }
