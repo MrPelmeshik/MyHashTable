@@ -71,12 +71,12 @@ public class Program
                 case "7":
                     Console.Out.Write("Введите старое значение: ");
                     int valueToDelete2;
-                    int.TryParse(Console.ReadLine(), out valueToDelete);
+                    int.TryParse(Console.ReadLine(), out valueToDelete2);
                     Console.Out.Write("Введите новое значение: ");
                     int valueToAdd2;
-                    int.TryParse(Console.ReadLine(), out valueToAdd);
-                    if(hashTable.Dlt(valueToDelete))
-                        hashTable.Add(valueToAdd, valueToAdd.ToString());
+                    int.TryParse(Console.ReadLine(), out valueToAdd2);
+                    if(hashTable.Dlt(valueToDelete2))
+                        hashTable.Add(valueToAdd2, valueToAdd2.ToString());
                     break;
                 case "0":
                     exit = true;
