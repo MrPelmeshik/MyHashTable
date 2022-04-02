@@ -108,7 +108,7 @@ namespace MyHashTable
         /// </summary>
         public void OutputHashTable()
         {
-            Console.Out.WriteLine("\nHashTable:");
+            Console.Out.WriteLine("\nХеш-таблица:");
             int n = _items.Length / 3;
             for (int i = 0; i < n + 1; i++)
             {
@@ -121,12 +121,13 @@ namespace MyHashTable
 
             void OutputColumn(int i)
             {
+                Console.Out.Write("\t\t");
                 Console.Out.Write(
                     i < _items.Length
                         ? _items[i].Value != null
                             //? $"\t{i} > \t{_items[i].Key} ({_items[i].Value})"
-                            ? $"\t{i} > \t{_items[i].Key}"
-                            : $"\t{i} > \t\t"
+                            ? $"{i} > \t{_items[i].Key}"
+                            : $"{i} > \t"
                         : $"\t\t\t");
             }
         }

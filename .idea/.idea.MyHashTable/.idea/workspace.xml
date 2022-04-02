@@ -11,7 +11,6 @@
     <list default="true" id="e531f34d-be2c-4ca6-a879-4808830fe4b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MyHashTable/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/HashTable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/HashTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyHashTable/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/MyHashTable.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyHashTable/bin/Debug/net6.0/ref/MyHashTable.dll" afterDir="false" />
@@ -43,7 +42,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/57c2d4282221452cad4df86bbd5d6fa0a1fc70/AB/Int32.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://E:/Document/УГАТУ/Магистратура/Алгоритмы и структуры данных/2 семестр/ЛР/MyHashTable/MyHashTable/HashTable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="25s0EvLmjUujv5Qd86382etaohQ" />
   <component name="ProjectViewState">
@@ -118,6 +116,7 @@
       <workItem from="1648033454251" duration="666000" />
       <workItem from="1648061500367" duration="3361000" />
       <workItem from="1648264918907" duration="1969000" />
+      <workItem from="1648905978145" duration="709000" />
     </task>
     <task id="LOCAL-00001" summary="Реализован генератор уникальных значений">
       <created>1646300858053</created>
@@ -161,7 +160,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648064355315</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="- Метод инициализации набором значений&#10;~ Переход на поиск по Key&#10;~ Поле Value не выводится при выводе ХТ">
+      <created>1648469885392</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1648469885392</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,20 +195,21 @@
     <MESSAGE value="Корректировка вывода на жкран" />
     <MESSAGE value="+ Меню&#10;+ Добавление&#10;+ Удаление&#10;+ Поиск&#10;+ Замена" />
     <MESSAGE value="~ Корректировки" />
-    <option name="LAST_COMMIT_MESSAGE" value="~ Корректировки" />
+    <MESSAGE value="- Метод инициализации набором значений&#10;~ Переход на поиск по Key&#10;~ Поле Value не выводится при выводе ХТ" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Метод инициализации набором значений&#10;~ Переход на поиск по Key&#10;~ Поле Value не выводится при выводе ХТ" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/MyHashTable/HashTable.cs</url>
-          <line>142</line>
+          <line>138</line>
           <properties documentPath="E:\Document\УГАТУ\Магистратура\Алгоритмы и структуры данных\2 семестр\ЛР\MyHashTable\MyHashTable\HashTable.cs" initialLine="141" containingFunctionPresentation="method 'OutputInfo'">
             <startOffsets>
-              <option value="3890" />
+              <option value="3769" />
             </startOffsets>
             <endOffsets>
-              <option value="3891" />
+              <option value="3770" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />
